@@ -771,7 +771,7 @@ footer {
 }
 
 .aws-banner {
-    background-image: url("../images/aws-original.webp");
+    background-image: url("../images/aws_banner_image.png");
     background-size: cover;
     float: left;
     height: 277px;
@@ -780,7 +780,7 @@ footer {
 }
 
 .netsuite-banner {
-    background-image: url("../images/hero-erp-netsuite-s.png");
+    background-image: url("../images/netsuite_banner_image.png");
     background-size: cover;
     float: left;
     height: 277px;
@@ -788,12 +788,12 @@ footer {
 
 }
 
-.aws-banner .top-banner-text {
+/* .aws-banner .top-banner-text {
     margin-top: 20px !important;
-}
+} */
 
 .zd-banner {
-    background-image: url("../images/zendesk-banner.png");
+    background-image: url("../images/zendesk_banner_image.png");
     background-size: cover;
     float: left;
     height: 277px;
@@ -801,12 +801,12 @@ footer {
 
 }
 
-.zd-banner .top-banner-text {
+/* .zd-banner .top-banner-text {
     margin-top: 20px !important;
-}
+} */
 
 .dnet-banner {
-    background-image: url("../images/hero-web-application.png");
+    background-image: url("../images/dotNet_banner_image.png");
     background-size: cover;
     float: left;
     height: 277px;
@@ -814,13 +814,13 @@ footer {
 
 }
 
-.dnet-banner .top-banner-text {
+/* .dnet-banner .top-banner-text {
     margin-top: 20px !important;
-}
+} */
 
-.netsuite-banner .top-banner-text {
+/* .netsuite-banner .top-banner-text {
     margin-top: 25px;
-}
+} */
 
 .cloudEnablement-banner {
     /*    background-image: url("../images/cloud-enablement -banner.jpg");*/
