@@ -1,6 +1,15 @@
 /****************************** Responsive CSS **********************/
 @media (max-width:767px) {
 
+    .cookies-wrap {
+        width: 100% !important;
+    }
+
+    .content-wrap {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     .two-div-row {
         flex-direction: column;
     }
