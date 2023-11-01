@@ -1,6 +1,14 @@
 /****************************** Responsive CSS **********************/
 @media (max-width:767px) {
 
+    .banner-btn {
+        width: 75%;
+    }
+
+    .small-text-pod-after-banner .speak-btn-wrap {
+        margin-top: 20px;
+    }
+
     .cookies-wrap {
         width: 100% !important;
     }

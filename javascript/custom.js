@@ -650,105 +650,100 @@ function trimIt(elemntV) {
 
 // Start Cookies
 // function setCookie(cname, cvalue, exdays) {
-// 	const cdate = new Date();
-// 	cdate.setTime(cdate.getTime() + (exdays * 24 * 60 * 60 * 1000));
-// 	let expires = "expires=" + cdate.toUTCString();
-// 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-//    }
-
-//    function getCookie(cname) {
-// 	 let name = cname + "=";
-// 	 let decodedCookie = decodeURIComponent(document.cookie);
-// 	 let cookieArray = decodedCookie.split(';');
-// 	 for(let i=0;i<cookieArray.length;i++) {
-// 	   let cookieObj = cookieArray[i];
-// 	   while(cookieObj.charAt(0) == ' ') {
-// 		 cookieObj = cookieObj.substring(1);
-// 	   }
-// 	   if (cookieObj.indexOf(name) == 0) {
-// 		 return cookieObj.substring(name.length, cookieObj.length)
-// 	   }
-
-// 	 }
-// 	 return "";
-//    }
-
-//    $(document).ready(function () {
-// 	try{
-// 	  if(getCookieConsentStatus()==null ) {
-// 		var cookieDiv = document.getElementById("cookie-div");
-// 		cookieDiv.style.display = 'block';
-// 	  }
-
-// 	}
-// 	catch(e) {
-// 	  var cookieDiv = document.getElementById("cookie-div");
-// 		cookieDiv.style.display = 'block';
-//    }}
-// 	)
-//    function getCookieConsentStatus(){
-// 	return localStorage.getItem('cookies_enabled_netpace');
-//    }
-
-//  function checkCookie() {
-//    if(getCookieConsentStatus()==1){
-//         let username = getCookie("username");
-//       if (username != "") {
-//       alert("Welcome again " + username);
-//       } else {
-//         username = prompt("Please enter your name:", "");
-//         if (username != "" && username != null) {
-//           setCookie("username", username, 365);
-//         }
-//       }
-//    }
-
+//   const cdate = new Date();
+//   cdate.setTime(cdate.getTime() + exdays * 24 * 60 * 60 * 1000);
+//   let expires = "expires=" + cdate.toUTCString();
+//   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 // }
 
-// 	function enableCookies() {
-// 	  localStorage.setItem('cookies_enabled_netpace',1);
+// function getCookie(cname) {
+//   let name = cname + "=";
+//   let decodedCookie = decodeURIComponent(document.cookie);
+//   let cookieArray = decodedCookie.split(";");
+//   for (let i = 0; i < cookieArray.length; i++) {
+//     let cookieObj = cookieArray[i];
+//     while (cookieObj.charAt(0) == " ") {
+//       cookieObj = cookieObj.substring(1);
+//     }
+//     if (cookieObj.indexOf(name) == 0) {
+//       return cookieObj.substring(name.length, cookieObj.length);
+//     }
+//   }
+//   return "";
+// }
 
-// 	  var cookieDiv = document.getElementById("cookie-div");
-// 	  cookieDiv.style.display = 'none';
-// 	}
+// $(document).ready(function () {
+//   try {
+//     if (getCookieConsentStatus() == null) {
+//       var cookieDiv = document.getElementById("cookie-div");
+//       cookieDiv.style.display = "block";
+//     }
+//   } catch (e) {
+//     var cookieDiv = document.getElementById("cookie-div");
+//     cookieDiv.style.display = "block";
+//   }
+// });
+// function getCookieConsentStatus() {
+//   return localStorage.getItem("cookies_enabled_netpace");
+// }
 
-// 	function disableCookies() {
-// 	  localStorage.setItem('cookies_enabled_netpace',0);
+// function checkCookie() {
+//   if (getCookieConsentStatus() == 1) {
+//     let username = getCookie("username");
+//     if (username != "") {
+//       alert("Welcome again " + username);
+//     } else {
+//       username = prompt("Please enter your name:", "");
+//       if (username != "" && username != null) {
+//         setCookie("username", username, 365);
+//       }
+//     }
+//   }
+// }
 
-// 	  var cookieDiv = document.getElementById("cookie-div");
-// 	  cookieDiv.style.display = 'none';
-// 	}
+// function enableCookies() {
+//   localStorage.setItem("cookies_enabled_netpace", 1);
 
-//   // END Cookie
-//   $(document).ready(function () {
-// 	var n = localStorage.getItem('on_load_counter');
-// 	if (n === null) {
-// 	 n = 0;
-// 	}
-// 	n = 0;
-// 	// n++;
+//   var cookieDiv = document.getElementById("cookie-div");
+//   cookieDiv.style.display = "none";
+// }
 
-// 	localStorage.setItem("on_load_counter", n);
+// function disableCookies() {
+//   localStorage.setItem("cookies_enabled_netpace", 0);
+
+//   var cookieDiv = document.getElementById("cookie-div");
+//   cookieDiv.style.display = "none";
+// }
+
+// // END Cookie
+// $(document).ready(function () {
+//   var n = localStorage.getItem("on_load_counter");
+//   if (n === null) {
+//     n = 0;
+//   }
+//   n = 0;
+//   // n++;
+
+//   localStorage.setItem("on_load_counter", n);
 // });
 
-// 	 function resetform(){
-// 		try{
-// 		document.getElementById('errorMsgemail').style.display = 'none';
-// 		document.getElementById('errorMsgcomment').style.display = 'none';
-// 		document.getElementById('ajax-loader').style.display = 'none';
-// 		document.getElementById('comments').value = '';
-// 		document.getElementById('emailAddr').value = '';
-// 		document.getElementById('name').value = '';
-// 		document.getElementById('pnumber').value = '';
-// 		document.getElementById('successMsg').style.display = 'none';
-// 		document.getElementById('errorMsg').style.display = 'none';
-// 		}
-// 		catch(error){
-// 			console.log(error);
-// 		}
+// function resetform() {
+//   try {
+//     document.getElementById("errorMsgemail").style.display = "none";
+//     document.getElementById("errorMsgcomment").style.display = "none";
+//     document.getElementById("ajax-loader").style.display = "none";
+//     document.getElementById("comments").value = "";
+//     document.getElementById("emailAddr").value = "";
+//     document.getElementById("name").value = "";
+//     document.getElementById("pnumber").value = "";
+//     document.getElementById("successMsg").style.display = "none";
+//     document.getElementById("errorMsg").style.display = "none";
+//   } catch (error) {
+//     console.log(error);
+//   }
 
-// 		return false;
-// 	 }
+//   return false;
+// }
 
 /*************************************************************************/
 
