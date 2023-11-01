@@ -2678,7 +2678,7 @@ ul li {
 }
 
 .aws-services-wrap .services-pod {
-    flex-basis: auto;
+    flex-basis: 45%;
 }
 
 .services-pod {
@@ -3581,7 +3581,7 @@ footer .header-menu ul li {
 
 /* cookies modal and box css */
 .cookies-wrap {
-    color: rgb(0, 0, 0);
+    /* color: rgb(0, 0, 0);
     background-color: rgb(232, 236, 247);
     width: 100%;
     padding: 18px 22px;
@@ -3596,7 +3596,7 @@ footer .header-menu ul li {
     position: fixed;
     bottom: 0px;
     right: 0px;
-    z-index: 99;
+    z-index: 99; */
 }
 
 .content-wrap {
