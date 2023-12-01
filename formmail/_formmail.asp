@@ -10,10 +10,10 @@
 
 	'- Customization of these values is required, see documentation. ----------
 
-	mailComp   = "CDOSYS"
+	mailComp   = "PS"
 	'mailComp   = "CDOSYS"
 	smtpServer = "mail.netpace.com"
-	fromAddr   = "support@netpace.com"
+	fromAddr   = "support@netpacehealth.com"
 
 	'allowedHosts      = Array("www.example.net", "example.net")
 	allowedHosts      = Array()
@@ -507,7 +507,7 @@
 				cdoMessage.ReplyTo = Trim(replyToAddr)
 			end if
 			cdoMessage.Subject = "We've received your email."
-			cdoMessage.HtmlBody = "Hi,<br/><br/>Thank you for your interest in Netpace.<br/>So this is to let you know, we have received your message and we'll respond back shortly. <br/><br/>Sincerely,<br/>Netpace Staff"
+			cdoMessage.HtmlBody = "Hi,<br/><br/>Thank you for your interest in Netpace Health.<br/>So this is to let you know, we have received your message and we'll respond back shortly. <br><br>Our mission driven team is here to support you!<br/><br/>Sincerely,<br/>Netpace Health Staff"
 			on error resume next
 			cdoMessage.Send
 			if Err.Number <> 0 then
@@ -566,6 +566,41 @@
 			end if
 			exit function
 		end if
+		
+		if mailComp = "PS" then
+		
+		
+			options = ""
+			if ccToAddr <> "" then
+				options = " -ReplyTo '" & Trim(ccToAddr) &"' -Cc '" & Trim(ccToAddr) & "'"
+			elseif replyToAddr <> "" then
+				options = " -ReplyTo '" & Trim(replyToAddr) &"'"
+			end if
+
+			
+			resultString = Replace(recipients, ",", ", ")
+			
+			script = "[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; $decodedString = [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('QmFkODU2Nzc=')); $recipients = '" & Cstr(resultString) & "'; $password = ConvertTo-SecureString $decodedString -AsPlainText -Force; $Credn = New-Object System.Management.Automation.PSCredential ('hr-pakistan@netpace.com', $password); Send-MailMessage -From 'hr-pakistan@netpace.com' -To $recipients -Subject '" & subject & "' -Body '" & body & "' -SmtpServer 'smtp.office365.com' -Credential $Credn -UseSsl -Port 587 -BodyAsHtml" & Cstr(options) & ";"
+
+			' Load the System.Management.Automation assembly
+			set objShell = Server.CreateObject("WScript.Shell")
+			objShell.Run "powershell -NoProfile -ExecutionPolicy Bypass -Command """ & script & """", 0, True
+
+			newTo = toAddress1
+			newSubject = "We''ve received your email."
+			newBody = "Hi,<br/><br/>Thank you for your interest in Netpace Health.<br/>So this is to let you know, we have received your message and we''ll respond back shortly. <br><br>Our mission driven team is here to support you!<br/><br/>Sincerely,<br/>Netpace Health Staff"
+			newScript = "[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; $decodedString = [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('QmFkODU2Nzc=')); $recipients = '" & Cstr(toAddress1) & "'; $password = ConvertTo-SecureString $decodedString -AsPlainText -Force; $Credn = New-Object System.Management.Automation.PSCredential ('hr-pakistan@netpace.com', $password); Send-MailMessage -From 'hr-pakistan@netpace.com' -To $recipients -Subject '" & newSubject & "' -Body '" & newBody & "' -SmtpServer 'smtp.office365.com' -Credential $Credn -UseSsl -Port 587 -BodyAsHtml" & Cstr(options) & ";"
+
+			Response.Write newScript
+			
+			' Load the System.Management.Automation assembly
+			set objShell = Server.CreateObject("WScript.Shell")
+			objShell.Run "powershell -NoProfile -ExecutionPolicy Bypass -Command """ & newScript & """", 0, True
+
+
+			set objShell = Nothing
+			exit function
+	 	end if
 
 	end function %>
 

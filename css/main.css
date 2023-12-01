@@ -3756,3 +3756,7 @@ footer .header-menu ul li {
     margin-top: 35px;
     margin-bottom: 50px;
 }
+
+.tools-img-wrap .tech-box img {
+    width: 68px !important;
+}
